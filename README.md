@@ -72,3 +72,30 @@ input and output data, which it then shuffles, loads and feeds into the
 neural network incrementally. It allows to adjust the hyperparameters
 and gives the trained model an ID, to identify it in a later comparison
 process and the output is as follows:
+
+1.  Image containing a plot of the loss through the epochs. Figure
+    [1](#lossmd)
+    
+    ![Example of a loss/epoch plot for a
+    model](readme_images/ID_1_loss.png)
+
+2.  Image containing a plot of the binary accuracy through the epochs.
+    [2](#bamd)
+    
+    ![Example of a binary accuracy/epoch plot for a
+    model](readme_images/ID_1_binary_accuracy.png)
+
+3.  Image containing a plot of the dice coefficient through the epochs.
+    [3](#dcmd)
+    
+    ![Example of a dice coefficient /epoch plot for a
+    model](readme_images/ID_1_dice%20coefficent.png)
+
+4.  The history of the loss and other evaluations of the model.
+
+5.  The trained model after the last epoch.
+
+6.  The trained model at its lowest validation loss.
+
+This notebook also allows training multiple models by using a loop for
+the model IDs and hyperparameter adjustments.
