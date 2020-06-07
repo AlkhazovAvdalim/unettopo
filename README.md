@@ -100,3 +100,63 @@ with the losses of the different models plotted in the same graph.
 <img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_116_vs_ID_117_vs_ID_118_loss.png?raw=true" width="630" height="420">
 
 <img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_116_vs_ID_117_vs_ID_118_val_loss.png?raw=true" width="630" height="420">
+
+## compare\_structure\_predictions: 
+
+This Jupyter notebook will load in different models and predict several
+example loadcases with them. After the predictions are made, a figure is
+created, which allows to see the difference in the structure’s model by
+model and compared to the ground truth exactly as in the following
+figure:
+
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/Loadcase%LoadCase_7852.npy101_vs_102_vs_103.png?raw=true" width="912" height="2400">
+
+## inference: 
+
+This is the final Jupyter notebook, which is used once a successful
+model is chosen. It is used to modify, split, and predict new
+OptiStructdata. For that it uses two of the previously mentioned
+notebooks in adjusted versions:
+
+  - data\_modification\_inf: for this notebook, only the 6 first
+    matrices are needed, since the output is irrelevant.
+
+  - split\_data\_inf: this notebook has been repurposed to apply padding
+    to the necessary matrixes.
+
+There are two additional resources this notebook uses:
+
+  - create\_output\_txt: this notebook has a function to read in the
+    split data and create predictions using the neural network. After
+    predicting the structures it creates a .txt file containing the
+    prediction in the following structure: "ELEMENT ID" (devined by
+    OptiStruct) and "PREDICTED DENSITY OF ELEMENT" for all the elements
+    and data instances. After this .txt file is made, the "change.fem"
+    containing the volume fraction restriction and forces is copyied for
+    each individual instance and the "inputDeck.fem", which contains the
+    arrangement of the element IDs. These three files are necessary to
+    run "Avdalim\_OptiStruct.exe".
+
+  - Avdalim\_OptiStruct.exe: this .exe has been written by Mr. Philipp
+    Clemens of the Chair of Optimization of Mechanical Structures and
+    creates two new InputDeck.fem files containing the structure
+    predicted by the neural network. One of these files has a penalty
+    factor built in, which penalizes structures with many uncertain
+    densities and one without the penalty factor. This allows not only
+    to evaluate the performance of the neural network, but also makes it
+    possible to use the predicted structure as initial design for the
+    conventional mechanical optimization.
+
+To use this notebook an inference folder has to be created with the
+following subfolders:
+
+  - data: this folder contains another folder called "raw", to which the
+    raw OptiStructloadcase folders have to be copied to.
+
+  - utils: contains the model and the Avdalim\_OptiStruct.exe.
+
+  - temp: contains the modified and split data.
+
+  - out: is created in the output process. It contains folders for all
+    the loadcases with two subfolders: "WithoutP" and "WithP". In these
+    subfolders are the new InputDeck.fem files to pass into OptiStruct.
