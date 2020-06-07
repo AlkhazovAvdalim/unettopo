@@ -91,3 +91,12 @@ process and the output is as follows:
 
 This notebook also allows training multiple models by using a loop for
 the model IDs and hyperparameter adjustments.
+
+## compare\_model\_losses: 
+
+This Jupyter Notebook is used to compare the losses of the different
+models. It reads in the corresponding history files and creates a plot
+with the losses of the different models plotted in the same graph.
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_116_vs_ID_117_vs_ID_118_loss.png?raw=true" width="630" height="420">
+
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_116_vs_ID_117_vs_ID_118_val_loss.png?raw=true" width="630" height="420">
