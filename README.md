@@ -109,7 +109,7 @@ created, which allows to see the difference in the structure’s model by
 model and compared to the ground truth exactly as in the following
 figure:
 
-<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/Loadcase%LoadCase_7852.npy101_vs_102_vs_103.png?raw=true" width="912" height="2400">
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/Loadcase%20LoadCase_7852.npy101_vs_102_vs_103.png?raw=true" width="912" height="2400">
 
 ## inference: 
 
