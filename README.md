@@ -73,21 +73,15 @@ neural network incrementally. It allows to adjust the hyperparameters
 and gives the trained model an ID, to identify it in a later comparison
 process and the output is as follows:
 
-1.  Image containing a plot of the loss through the epochs. Figure
-    [1](#lossmd)
+1.  Image containing a plot of the loss through the epochs.
     
-<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_1_loss.png?raw=true" width="100" height="100">
-2.  Image containing a plot of the binary accuracy through the epochs.Figure
-    [2](#bamd)
-    
-    ![Example of a binary accuracy/epoch plot for a
-    model](readme_images/ID_1_binary_accuracy.png)
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_1_loss.png?raw=true" width="1260" height="840">
+2.  Image containing a plot of the binary accuracy through the epochs.
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_1_binary_accuracy.png?raw=true" width="1260" height="840">    
 
-3.  Image containing a plot of the dice coefficient through the epochs.Figure
-    [3](#dcmd)
-    
-    ![Example of a dice coefficient /epoch plot for a
-    model](readme_images/ID_1_dice%20coefficent.png)
+3.  Image containing a plot of the dice coefficient through the epochs.
+<img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_1_dice%20coefficent.png?raw=true" width="1260" height="840">
+
 
 4.  The history of the loss and other evaluations of the model.
 
