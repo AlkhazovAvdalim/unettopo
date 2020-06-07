@@ -77,19 +77,19 @@ process and the output is as follows:
     [1](#lossmd)
     
     ![Example of a loss/epoch plot for a
-    model](readme_images/ID_1_loss.png)
+    model](readme_images/ID_1_loss.png =1250x)
 
-2.  Image containing a plot of the binary accuracy through the epochs.
+2.  Image containing a plot of the binary accuracy through the epochs.Figure
     [2](#bamd)
     
     ![Example of a binary accuracy/epoch plot for a
-    model](readme_images/ID_1_binary_accuracy.png)
+    model](readme_images/ID_1_binary_accuracy.png =1250x)
 
-3.  Image containing a plot of the dice coefficient through the epochs.
+3.  Image containing a plot of the dice coefficient through the epochs.Figure
     [3](#dcmd)
     
     ![Example of a dice coefficient /epoch plot for a
-    model](readme_images/ID_1_dice%20coefficent.png)
+    model](readme_images/ID_1_dice%20coefficent.png =1250x)
 
 4.  The history of the loss and other evaluations of the model.
 
