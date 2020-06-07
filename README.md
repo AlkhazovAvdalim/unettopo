@@ -43,3 +43,18 @@ The faulty.npy contains loadcases in which it was not possible to
 convert the data, for example if the OptiStructdata is missing
 information.
 
+\subsection{split\_data :}
+
+This Jupyter Notebook reads in the data from data\_modification, processes it and saves it under different folders. The user has to define an iteration x for the optimized structures. \newline
+This is done as follows:
+\begin{enumerate}
+    \item Load in the numpy arrays of the data instances one by one.
+    \item Apply padding to the necessary matrixes (Matrices 0, 3-5).
+    \item Split the data by Input (Matrices 0-5), Output (optimized structure from iteration x),Force Information. And save it into 3 folders.
+\end{enumerate}
+
+\noindent This leads to 3 folders containing a numpy array for each data instance with the according input, output and force matrices. If the iteration x defined by the user exceeds the maximal iteration of the optimized structure, the structure from the last iteration is used and the loadcase is saved under under\_iteration.npy.
+
+\subsection{unet\_kaggle\_wloop: }
+
+\noindent This Jupyter Notebook is used in Kaggle Kernels to train the neural network and create trained models. It loads in the split information using a data generator, which operates by the individual paths of the input and output data, which it then shuffles, loads and feeds into the neural network incrementally. It allows to adjust the hyperparameters and gives the trained model an ID, to identify it in a later comparison process and the output is as follows:
