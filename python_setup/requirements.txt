@@ -15,7 +15,7 @@ backports.shutil-get-terminal-size==1.0.0
 beautifulsoup4==4.8.1
 bitarray==1.0.1
 bkcharts==0.2
-bleach==3.1.0
+bleach==3.1.4
 bokeh==1.4.0
 boto==2.49.0
 Bottleneck==1.2.1
@@ -128,14 +128,14 @@ pathlib2==2.3.5
 patsy==0.5.1
 pep8==1.7.1
 pickleshare==0.7.5
-Pillow==6.2.1
+Pillow==6.2.2
 pkginfo==1.5.0.1
 pluggy==0.13.0
 ply==3.11
 prometheus-client==0.7.1
 prompt-toolkit==2.0.10
 protobuf==3.10.1
-psutil==5.6.3
+psutil==5.6.6
 py==1.8.0
 pycodestyle==2.5.0
 pycosat==0.6.3
@@ -200,9 +200,9 @@ tables==3.6.1
 tb-nightly==1.14.0a20190603
 tblib==1.5.0
 tensorboard==2.0.0
-tensorflow==2.0.0
+tensorflow==2.0.1
 tensorflow-estimator==2.0.0
-tensorflow-gpu==2.0.0
+tensorflow-gpu==2.0.1
 termcolor==1.1.0
 terminado==0.8.2
 testpath==0.4.2
