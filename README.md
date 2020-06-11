@@ -11,16 +11,16 @@ compile a compendium of deep learning in general for mechanical
 engineers.
 
 The software developed for this project modifies raw data from
-Optistructform, the conventional tool used in the chair for optimization
+Optistruct(TM) form, the conventional tool used in the chair for optimization
 of mechanical structures, trains a neural network and is used after the
 training of the neural network to predict new data instances, which are
-then brought back into the conventional Optistructform.
+then brought back into the conventional Optistruct(TM) form.
 
 The input of the neural network consists of the following six matrices:
 Volume Fraction, X-Displacement, Y-Displacement, X-Strains, Y-Strains,
 XY-Strains. The output of the neural network is a matrix containing
 predicted densities for each structure element. 19,600 load cases with
-the dimension 64 \(\times\)48 have been used for the training and
+the dimension 64 x 48 have been used for the training and
 validation. The architecture of the used network is heavily based on the
 architecture proposed in Yiquan Zhang et al. “A deep Convolutional
 Neural Network for topology optimization with strong generalization
