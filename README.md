@@ -1,6 +1,47 @@
-# unettopo
+# UnetTopo
 
-## data\_modification :
+## Abstract
+
+In this project, a method from machine learning is proposed to
+accelerate the pixel-based topology optimization. The goal is to develop
+a software, which shows a proof of concept for using a neural network to
+predict mechanical structures based on mechanical information passed
+into the neural network as input. Another goal of this project was to
+compile a compendium of deep learning in general for mechanical
+engineers.
+
+The software developed for this project modifies raw data from
+Optistructform, the conventional tool used in the chair for optimization
+of mechanical structures, trains a neural network and is used after the
+training of the neural network to predict new data instances, which are
+then brought back into the conventional Optistructform.
+
+The input of the neural network consists of the following six matrices:
+Volume Fraction, X-Displacement, Y-Displacement, X-Strains, Y-Strains,
+XY-Strains. The output of the neural network is a matrix containing
+predicted densities for each structure element. 19,600 load cases with
+the dimension 64 \(\times\)48 have been used for the training and
+validation. The architecture of the used network is heavily based on the
+architecture proposed in Yiquan Zhang et al. “A deep Convolutional
+Neural Network for topology optimization with strong generalization
+ability”.
+
+The structure optimization using the neural network is around 31 times
+faster with regard to the whole inference process and around 838 times
+faster with regard to only the prediction process. The quality of these
+predictions was worse compared to the conventional method with an
+observed factor of 1.32-1.45 in the 75% quartile with an extreme case
+reaching a factor of over 200. (n=185)
+
+Therefore it is not suggested to use the neural network in its current
+state as a reliable stand-alone optimization tool, but use the predicted
+structures as an initial design for the conventional method of
+mechanical structure optimization and incrementally retraining the
+neural network with each mechanical optimization.
+
+## Handbook
+
+### data\_modification :
 
 A big problem for the practical application of this project was the data
 size. The data used for this project took around 2 TB in OptiStructform.
@@ -43,7 +84,7 @@ The faulty.npy contains loadcases in which it was not possible to
 convert the data, for example if the OptiStructdata is missing
 information.
 
-## split\_data :
+### split\_data :
 
 This Jupyter Notebook reads in the data from data\_modification,
 processes it and saves it under different folders. The user has to
@@ -63,7 +104,7 @@ defined by the user exceeds the maximal iteration of the optimized
 structure, the structure from the last iteration is used and the
 loadcase is saved under under\_iteration.npy.
 
-## unet\_kaggle\_wloop: 
+### unet\_kaggle\_wloop: 
 
 This Jupyter Notebook is used in Kaggle Kernels to train the neural
 network and create trained models. It loads in the split information
@@ -92,7 +133,7 @@ process and the output is as follows:
 This notebook also allows training multiple models by using a loop for
 the model IDs and hyperparameter adjustments.
 
-## compare\_model\_losses: 
+### compare\_model\_losses: 
 
 This Jupyter Notebook is used to compare the losses of the different
 models. It reads in the corresponding history files and creates a plot
@@ -101,7 +142,7 @@ with the losses of the different models plotted in the same graph.
 
 <img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/ID_116_vs_ID_117_vs_ID_118_val_loss.png?raw=true" width="630" height="420">
 
-## compare\_structure\_predictions: 
+### compare\_structure\_predictions: 
 
 This Jupyter notebook will load in different models and predict several
 example loadcases with them. After the predictions are made, a figure is
@@ -111,7 +152,7 @@ figure:
 
 <img src="https://github.com/AlkhazovAvdalim/unettopo/blob/master/readme_images/Loadcase%20LoadCase_7852.npy101_vs_102_vs_103.png?raw=true" width="456" height="1200">
 
-## inference: 
+### inference: 
 
 This is the final Jupyter notebook, which is used once a successful
 model is chosen. It is used to modify, split, and predict new
