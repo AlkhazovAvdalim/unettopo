@@ -11,7 +11,7 @@ compile a compendium of deep learning in general for mechanical
 engineers.
 
 The software developed for this project modifies raw data from
-Optistruct(TM) form, the conventional tool used in the chair for optimization
+Optistruct(TM) form, the conventional tool used by the chair for optimization
 of mechanical structures, trains a neural network and is used after the
 training of the neural network to predict new data instances, which are
 then brought back into the conventional Optistruct(TM) form.
